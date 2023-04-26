@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloth-Test</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .check {
+        display: flex;
+        gap: 30px;
+      }
+      .check input {
+        display: none;
+      }
+      .check label {
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      #one:checked + label,
+      #two:checked + label {
+        color: rgb(110, 0, 253);
+        scale: 1.2;
+      }
+
+      .change img {
+        width: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="check">
+      <input type="radio" id="one" name="radio-group" />
+      <label for="one" class="one">1번</label>
+      <input type="radio" id="two" name="radio-group" />
+      <label for="two" class="two">2번</label>
+      <input type="radio" id="reset" name="radio-group" />
+      <label for="reset" class="reset">reset</label>
+    </div>
+    <div class="change">
+      <img src="img/A1.png" alt="img" />
+    </div>
+
+    <script type="text/javascript">
+      let one = document.querySelector(".one");
+      let two = document.querySelector(".two");
+      let reset = document.querySelector(".reset");
+      let image = document.querySelector(".change img");
+
+      one.addEventListener("click", () => {
+        image.src = "img/A2.png";
+      });
+
+      two.addEventListener("click", () => {
+        image.src = "img/A3.png";
+      });
+
+      reset.addEventListener("click", () => {
+        image.src = "img/A1.png";
+      });
+    </script>
+  </body>
+</html>
